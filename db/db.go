@@ -370,11 +370,13 @@ func (db *Database) SearchAttribute(query url.Values) (results []types.SearchRes
 	}
 
 	if v := query.Get("tf_version"); string(v) != "" {
-		where = append(where, fmt.Sprintf("states.tf_version LIKE '%s'", fmt.Sprintf("%%%s%%", v)))
+		where = append(where, "states.tf_version LIKE ?")
+		params = append(params, fmt.Sprintf("%%%s%%", v))
 	}
 
 	if v := query.Get("lineage_value"); string(v) != "" {
-		where = append(where, fmt.Sprintf("lineages.value LIKE '%s'", fmt.Sprintf("%%%s%%", v)))
+		where = append(where, "lineages.value LIKE ?")
+		params = append(params, fmt.Sprintf("%%%s%%", v))
 	}
 
 	if len(where) > 0 {
@@ -475,7 +477,6 @@ func (db *Database) ListStateStats(query url.Values) (states []types.StateStat, 
 
 	var paginationQuery string
 	var params []interface{}
-	page = 1
 	if v := string(query.Get("page")); v != "" {
 		page, _ = strconv.Atoi(v) // TODO: err
 		offset := (page - 1) * pageSize

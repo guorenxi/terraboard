@@ -141,6 +141,7 @@ func (c *Config) LoadConfigFromYaml(filename string) *Config {
 		log.Printf("yamlFile.Get err #%v ", err)
 	}
 
+	yamlFile = []byte(os.ExpandEnv(string(yamlFile)))
 	err = yaml.Unmarshal(yamlFile, c)
 	if err != nil {
 		log.Fatalf("Unmarshal err: %v", err)
@@ -171,7 +172,7 @@ func LoadConfig(version string) *Config {
 	parsedConfig := parseStructFlagsAndEnv()
 
 	if parsedConfig.Version {
-		fmt.Printf("Terraboard v%v (built for Terraform v%v)\n", version, tfversion.Version)
+		fmt.Printf("Terraboard %v (built for Terraform v%v)\n", version, tfversion.Version)
 		os.Exit(0)
 	}
 

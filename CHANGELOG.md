@@ -1,5 +1,38 @@
 # Changelog
 
+## [2.4.0](https://www.github.com/camptocamp/terraboard/compare/v2.3.0...v2.4.0) (2024-07-24)
+
+
+### Features
+
+* support noLocks and noVersioning with all state providers ([f59bb70](https://www.github.com/camptocamp/terraboard/commit/f59bb70577b7af1347ef6b2cbcbe18d4d1f9f3b0))
+
+## [2.3.0](https://www.github.com/camptocamp/terraboard/compare/v2.2.0...v2.3.0) (2023-10-26)
+
+
+### Features
+
+* **go:** upgrade Terraboard's Go version to v1.21
+* **internal:** update Terraform's internal packages ([e457ebc](https://www.github.com/camptocamp/terraboard/commit/e457ebc154730baea6fbbf1723e52e417c67f55c))
+
+
+### Bug Fixes
+
+* **config:** missing default values with yaml ([3f31b1f](https://www.github.com/camptocamp/terraboard/commit/3f31b1f0e0b8f6f8b17867872d7f4ea0b5fbd128))
+* remove duplicated 'v' on terraboard version (frontend/logs) ([a2f6589](https://www.github.com/camptocamp/terraboard/commit/a2f65899a7f5e41c3f8ef4d8d06e53bd58d6d9d5))
+
+## [2.2.0](https://www.github.com/camptocamp/terraboard/compare/v2.1.1...v2.2.0) (2022-05-25)
+
+
+### Features
+
+* add ability to resolve environment variables in yaml config ([#240](https://www.github.com/camptocamp/terraboard/issues/240)) ([a857bcd](https://www.github.com/camptocamp/terraboard/commit/a857bcd796ef50c1bee218ff94805579ce2a6efa))
+
+
+### Bug Fixes
+
+* **db:** possible sql injection on /search endpoint ([#247](https://www.github.com/camptocamp/terraboard/issues/247)) ([56dbee8](https://www.github.com/camptocamp/terraboard/commit/56dbee8d8e11da7f33ff0901983a88a358932a93))
+
 ### [2.1.1](https://www.github.com/camptocamp/terraboard/compare/v2.1.0...v2.1.1) (2022-03-05)
 
 
